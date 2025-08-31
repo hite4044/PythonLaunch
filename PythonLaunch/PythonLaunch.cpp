@@ -50,11 +50,6 @@ int CALLBACK WinMain(
         command += L"\"";
     }
 
-    // 创建管道
-    HANDLE hReadPipe, hWritePipe;
-    SECURITY_ATTRIBUTES sa = { sizeof(sa), NULL, TRUE };
-    CreatePipe(&hReadPipe, &hWritePipe, &sa, 0);
-
     // 准备CreateProcess参数
     STARTUPINFOW si = { sizeof(si) };
     si.dwFlags = STARTF_USESTDHANDLES;
